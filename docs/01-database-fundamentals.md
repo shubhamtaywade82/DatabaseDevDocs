@@ -82,32 +82,7 @@ The choice of database type depends on factors such as the nature of the data, p
 
 Each data model has its strengths and weaknesses, and the choice of model depends on the specific requirements of the application, such as the nature of the data, scalability needs, performance considerations, and the types of queries and operations that need to be performed.
 
-## Relational Database Concepts
-- **Tables, rows, and columns**
-  - Tables are used to store data, with each table representing a specific entity or concept.
-  - Rows (tuples) represent individual records or instances of the entity.
-  - Columns (attributes) represent the different properties or characteristics of the entity.
-- **Data types**
-  - Databases support various data types (e.g., numeric, string, date, time, boolean) to store different kinds of data.
-  - Choosing the appropriate data type is crucial for efficient storage and data integrity.
-- **Keys**
-  - Primary key: A unique identifier for each row in a table, ensuring entity integrity.
-  - Foreign key: A reference to a primary key in another table, establishing relationships between tables.
-  - Candidate key: A column or set of columns that can uniquely identify a row in a table.
-  - Composite key: A primary key composed of multiple columns.
-- **Relationships**
-  - One-to-one: A single record in one table is related to a single record in another table.
-  - One-to-many: A single record in one table is related to multiple records in another table.
-  - Many-to-many: Multiple records in one table are related to multiple records in another table, typically implemented using a junction table.
-- **Normalization**
-  - First Normal Form (1NF): Eliminates repeating groups and ensures atomic values in columns.
-  - Second Normal Form (2NF): Eliminates partial dependencies by removing non-key attributes that depend on part of the primary key.
-  - Third Normal Form (3NF): Eliminates transitive dependencies by removing non-key attributes that depend on other non-key attributes.
-  - Boyce-Codd Normal Form (BCNF): Eliminates all remaining anomalies by ensuring that every determinant is a candidate key.
-- **Integrity constraints**
-  - Entity integrity: Ensures that every row in a table is uniquely identifiable by its primary key.
-  - Referential integrity: Ensures that foreign key values reference existing primary key values in the related table.
-  - Domain integrity: Ensures that data values in a column adhere to the specified data type and constraints.
+
 
 ## Database Management Systems (DBMS)
 - **What is a DBMS?**
