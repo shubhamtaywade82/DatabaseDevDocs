@@ -264,3 +264,47 @@ Each data model has its strengths and weaknesses, and the choice of model depend
   3. **Legacy systems**: Integrating with legacy systems or applications that rely on denormalized data structures may require denormalization in the new database design.
 
   However, denormalization should be applied judiciously, as it can increase storage requirements, introduce potential data inconsistencies, and make data updates more complex. It's essential to strike a balance between query performance and data integrity based on the specific application requirements.
+
+## Database Transactions
+
+- **ACID properties (Atomicity, Consistency, Isolation, Durability)**
+  Transactions in database systems are designed to ensure data integrity and reliability. They adhere to the ACID properties, which stand for:
+
+  1. **Atomicity**: A transaction is an indivisible unit of work, meaning that either all of its operations are performed successfully, or none of them are. If any part of a transaction fails, the entire transaction is rolled back, ensuring that the database remains in a consistent state.
+
+  2. **Consistency**: A transaction must transition the database from one valid state to another valid state. It should not violate any of the defined integrity constraints, such as primary key constraints, foreign key constraints, or user-defined constraints.
+
+  3. **Isolation**: Concurrent transactions must operate in isolation, as if they were executing serially, without interference from other transactions. Isolation ensures that the intermediate state of a transaction is invisible to other transactions until it is committed, preventing data corruption or inconsistencies caused by concurrent access.
+
+  4. **Durability**: Once a transaction is committed, its effects must persist in the database, even in the event of system failures, power outages, or crashes. The changes made by a committed transaction are permanently stored in the database, ensuring data durability.
+
+- **Transaction control statements (BEGIN, COMMIT, ROLLBACK)**
+  Database management systems (DBMSs) provide transaction control statements to manage the execution and completion of transactions:
+
+  1. **BEGIN**: This statement marks the start of a transaction. All subsequent SQL statements are considered part of the transaction until it is committed or rolled back.
+
+  2. **COMMIT**: The COMMIT statement marks the successful completion of a transaction. All changes made by the transaction are permanently applied to the database, and the resources held by the transaction are released.
+
+  3. **ROLLBACK**: The ROLLBACK statement undoes all the changes made by a transaction, effectively canceling it. The database is restored to its state before the transaction began, and any resources held by the transaction are released.
+
+- **Concurrency control and locking mechanisms**
+  Concurrency control mechanisms ensure that multiple transactions can access the same data concurrently without causing data corruption or inconsistencies. These mechanisms typically involve locking strategies:
+
+  1. **Shared locks**: Shared locks, also known as read locks, allow multiple transactions to read the same data concurrently, but prevent any transaction from modifying the data.
+
+  2. **Exclusive locks**: Exclusive locks, also known as write locks, grant a single transaction exclusive access to a resource, preventing other transactions from reading or modifying the data until the lock is released.
+
+  3. **Two-phase locking**: A widely used locking protocol that ensures serializability (isolation) by following two rules: (1) A transaction must acquire all the locks it needs before it can release any lock, and (2) Once a transaction releases a lock, it cannot acquire any new locks.
+
+- **Isolation levels**
+  Isolation levels determine the degree of isolation between concurrent transactions, representing a trade-off between performance and data consistency. The most common isolation levels are:
+
+  1. **Read Uncommitted**: This level provides no isolation, allowing transactions to read uncommitted data from other transactions, potentially leading to dirty reads, non-repeatable reads, and phantom reads.
+
+  2. **Read Committed**: This level prevents dirty reads by ensuring that a transaction can only read data that has been committed by other transactions. However, it still allows non-repeatable reads and phantom reads.
+
+  3. **Repeatable Read**: This level prevents non-repeatable reads by ensuring that a transaction can read the same data multiple times within the transaction, even if other transactions have modified or added new data in the meantime. However, it still allows phantom reads.
+
+  4. **Serializable**: This is the highest level of isolation, preventing all types of anomalies (dirty reads, non-repeatable reads, and phantom reads) by executing transactions serially, without any interleaving. It provides the highest level of data consistency but may result in reduced concurrency and performance.
+
+Understanding and correctly implementing transactions and their associated concepts (ACID properties, control statements, concurrency control, and isolation levels) is crucial for maintaining data integrity and consistency in database systems, especially in multi-user environments with concurrent access.
