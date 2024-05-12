@@ -82,7 +82,57 @@ The choice of database type depends on factors such as the nature of the data, p
 
 Each data model has its strengths and weaknesses, and the choice of model depends on the specific requirements of the application, such as the nature of the data, scalability needs, performance considerations, and the types of queries and operations that need to be performed.
 
+## Relational Database Concepts
 
+- **Tables, rows, and columns**
+  In a relational database, data is organized into tables, which are two-dimensional structures consisting of rows and columns. Each table represents a specific entity or concept, and its structure is defined by a set of columns that represent the attributes or characteristics of that entity.
+
+  - **Rows** (also known as tuples or records) represent individual instances or occurrences of the entity. Each row contains a unique set of values for the attributes defined by the columns.
+  - **Columns** (also known as fields or attributes) define the types of data that can be stored in each row. Each column has a specific data type (e.g., integer, string, date, etc.) and may have additional constraints or rules applied to it.
+
+- **Data types**
+  Relational databases support a variety of data types to store different kinds of data. Common data types include:
+  - Numeric types (e.g., integer, decimal, float)
+  - Character types (e.g., char, varchar, text)
+  - Date and time types (e.g., date, time, timestamp)
+  - Boolean type (true/false)
+  - Binary data types (e.g., blob, varbinary)
+
+  Choosing the appropriate data type is crucial for efficient storage, data integrity, and performance optimization.
+
+- **Keys**
+  Keys are used to uniquely identify rows or establish relationships between tables. The main types of keys in relational databases are:
+
+  - **Primary key**: A column or a combination of columns that uniquely identifies each row in a table. Primary keys enforce entity integrity and ensure that no duplicate rows exist.
+  - **Foreign key**: A column or a combination of columns that references the primary key of another table. Foreign keys are used to establish relationships between tables and enforce referential integrity.
+  - **Candidate key**: A column or a combination of columns that can uniquely identify each row in a table. A table may have multiple candidate keys, and one of them is designated as the primary key.
+  - **Composite key**: A primary key or candidate key that consists of two or more columns combined.
+
+- **Relationships**
+  Relationships in relational databases define how tables are related to each other based on their keys. The three main types of relationships are:
+
+  - **One-to-one**: A single row in one table is related to a single row in another table. For example, one employee has one employee record.
+  - **One-to-many**: A single row in one table is related to multiple rows in another table. For example, one department can have multiple employees.
+  - **Many-to-many**: Multiple rows in one table are related to multiple rows in another table. This type of relationship is typically implemented using a junction or associative table. For example, students can enroll in multiple courses, and courses can have multiple students enrolled.
+
+- **Normalization**
+  Normalization is the process of organizing data in a database to reduce redundancy, eliminate anomalies (insert, update, and delete anomalies), and ensure data integrity. The main normal forms are:
+
+  - **First Normal Form (1NF)**: A table is in 1NF if it has no repeating groups of data and all entries in a column are of the same data type.
+  - **Second Normal Form (2NF)**: A table is in 2NF if it is in 1NF and all non-key attributes are fully dependent on the entire primary key.
+  - **Third Normal Form (3NF)**: A table is in 3NF if it is in 2NF and all non-key attributes are mutually independent (i.e., no transitive dependencies).
+  - **Boyce-Codd Normal Form (BCNF)**: A table is in BCNF if it is in 3NF and every determinant (a column or set of columns on which other columns are functionally dependent) is a candidate key.
+
+  Normalization helps to minimize data redundancy, improve data integrity, and ensure efficient storage and retrieval of data.
+
+- **Integrity constraints**
+  Integrity constraints are rules or conditions that are enforced by the database management system (DBMS) to maintain data integrity and consistency. The main types of integrity constraints are:
+
+  - **Entity integrity**: Ensures that every row in a table is uniquely identifiable by its primary key, and primary key values cannot be null.
+  - **Referential integrity**: Ensures that foreign key values in one table reference existing primary key values in another table, maintaining the relationships between tables.
+  - **Domain integrity**: Ensures that data values in a column adhere to the specified data type and any additional constraints (e.g., range, pattern, or allowed values).
+
+  Integrity constraints help to prevent data inconsistencies and maintain the overall integrity of the database.
 
 ## Database Management Systems (DBMS)
 - **What is a DBMS?**
