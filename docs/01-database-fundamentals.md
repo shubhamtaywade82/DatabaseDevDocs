@@ -169,29 +169,45 @@ Each data model has its strengths and weaknesses, and the choice of model depend
   - **Redis**: An open-source, in-memory key-value store often used as a cache or message broker, known for its high performance and support for data structures like strings, hashes, lists, and sets.
 
 ## Structured Query Language (SQL)
+
 - **Introduction to SQL**
-  - SQL (Structured Query Language) is the standard programming language for managing and manipulating relational databases.
-  - It provides a consistent and intuitive way to interact with databases, regardless of the underlying DBMS.
+  SQL (Structured Query Language) is the standard programming language for managing and manipulating relational databases. It provides a consistent and intuitive way to interact with databases, regardless of the underlying database management system (DBMS).
+
+  SQL is a declarative language, meaning you specify what data you want, and the DBMS determines the most efficient way to retrieve or manipulate that data. This abstraction from low-level implementation details makes SQL a powerful and versatile tool for working with databases.
+
 - **SQL syntax and statements**
-  - Data Definition Language (DDL): Used to create, modify, and delete database objects like tables, views, and indexes (e.g., CREATE, ALTER, DROP).
-  - Data Manipulation Language (DML): Used to insert, update, and delete data in tables (e.g., INSERT, UPDATE, DELETE).
-  - Data Control Language (DCL): Used to manage user access and permissions (e.g., GRANT, REVOKE).
-  - Transaction Control Language (TCL): Used to manage transactions (e.g., BEGIN, COMMIT, ROLLBACK).
+  SQL statements can be broadly categorized into four main types:
+
+  - **Data Definition Language (DDL)**: Used to create, modify, and delete database objects like tables, views, indexes, and other schema elements. Examples: `CREATE TABLE`, `ALTER TABLE`, `DROP TABLE`.
+  - **Data Manipulation Language (DML)**: Used to insert, update, and delete data within database tables. Examples: `INSERT INTO`, `UPDATE`, `DELETE`.
+  - **Data Control Language (DCL)**: Used to manage user access and permissions, granting or revoking privileges on database objects. Examples: `GRANT`, `REVOKE`.
+  - **Transaction Control Language (TCL)**: Used to manage transactions, which are logical units of work that ensure data integrity. Examples: `BEGIN TRANSACTION`, `COMMIT`, `ROLLBACK`.
+
 - **Creating, modifying, and dropping database objects**
-  - Creating tables, views, indexes, and other database objects using CREATE statements.
-  - Modifying the structure of existing objects using ALTER statements.
-  - Dropping (deleting) database objects using DROP statements.
+  - `CREATE` statements are used to create new database objects like tables, views, indexes, and more. For example, `CREATE TABLE` defines a new table with specified columns and data types.
+  - `ALTER` statements are used to modify the structure of existing database objects. For example, `ALTER TABLE` can add, modify, or drop columns from a table.
+  - `DROP` statements are used to remove database objects from the schema. For example, `DROP TABLE` deletes a table and all its data.
+
 - **Querying data**
-  - SELECT statement: Used to retrieve data from one or more tables, with various clauses for filtering, sorting, and grouping results (e.g., WHERE, JOIN, GROUP BY, HAVING, ORDER BY).
-  - JOIN operations: Used to combine rows from multiple tables based on related columns (e.g., INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL OUTER JOIN).
+  - The `SELECT` statement is used to retrieve data from one or more tables. It supports various clauses for filtering, sorting, and transforming data:
+    - `WHERE`: Filters rows based on specified conditions.
+    - `JOIN`: Combines rows from multiple tables based on related columns.
+    - `GROUP BY`: Groups rows based on one or more columns for aggregation.
+    - `HAVING`: Filters groups based on specified conditions.
+    - `ORDER BY`: Sorts the result set based on one or more columns.
+
 - **Updating and deleting data**
-  - UPDATE statement: Used to modify existing data in a table based on specified conditions.
-  - DELETE statement: Used to remove rows from a table based on specified conditions.
+  - The `UPDATE` statement is used to modify existing data in a table based on specified conditions.
+  - The `DELETE` statement is used to remove rows from a table based on specified conditions.
+
 - **Advanced SQL concepts**
-  - Subqueries: Queries nested within other queries, enabling complex data retrieval and manipulation.
-  - Views: Virtual tables based on the result of a stored query, providing a logical abstraction of data.
-  - Stored procedures: Reusable sets of SQL statements that can be executed with parameters, enabling modularization and encapsulation.
-  - Triggers: Special types of stored procedures that automatically execute when specific events occur (e.g., INSERT, UPDATE, DELETE).
+  - **Subqueries**: Queries nested within other queries, allowing for complex data retrieval and manipulation.
+  - **Views**: Virtual tables based on the result of a stored query, providing a logical abstraction of data.
+  - **Stored procedures**: Reusable sets of SQL statements that can be executed with parameters, enabling modularization and encapsulation.
+  - **Triggers**: Special types of stored procedures that automatically execute when specific events occur (e.g., `INSERT`, `UPDATE`, `DELETE`).
+  - **Window functions**: Functions that perform calculations across a set of rows related to the current row (e.g., `RANK`, `PARTITION`, `LAG`, `LEAD`).
+  - **Common Table Expressions (CTEs)**: Temporary named result sets that can be referenced within a query, improving readability and simplifying complex queries.
+  - **Transactions**: Logical units of work that ensure data integrity by following the ACID principles (Atomicity, Consistency, Isolation, Durability).
 
 ## Database Design
 - **Database design process**
